@@ -1,0 +1,30 @@
+Repository Structure
+ai-research-gap-analyzer/
+│
+├── README.md
+├── requirements.txt
+├── .gitignore
+├── LICENSE
+│
+├── data/
+│   ├── raw/
+│   ├── processed/
+│
+├── notebooks/
+│   └── exploration.ipynb
+│
+├── src/
+│   ├── __init__.py
+│   ├── pdf_loader.py
+│   ├── text_preprocessing.py
+│   ├── embedding_model.py
+│   ├── gap_detector.py
+│   └── summarizer.py
+│
+├── experiments/
+│   └── results.md
+│
+├── tests/
+│   └── test_gap_detector.py
+│
+└── main.py
