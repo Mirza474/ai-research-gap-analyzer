@@ -1,0 +1,23 @@
+
+---
+
+## 🧪 Example Core Logic (`gap_detector.py`)
+
+```python
+from sklearn.cluster import KMeans
+import numpy as np
+
+def detect_research_gaps(embeddings, section_labels):
+    """
+    Detects gaps by finding under-represented semantic clusters.
+    """
+    kmeans = KMeans(n_clusters=5, random_state=42)
+    clusters = kmeans.fit_predict(embeddings)
+
+    gap_clusters = []
+    for cluster_id in range(5):
+        count = np.sum(clusters == cluster_id)
+        if count < (0.1 * len(embeddings)):
+            gap_clusters.append(cluster_id)
+
+    return gap_clusters
